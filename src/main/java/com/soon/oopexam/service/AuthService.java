@@ -26,6 +26,12 @@ public class AuthService {
         return AuthResult.NO_MATCH;
     }
 
+    public void verifyEmail(String token) {
+        Member member = memberRepository.findByToken(token);
+        if(member == null) throw new IllegalArgumentException();
+        member.verifyEmail();
+    }
+
     private Member findOne(String id) {
         return memberRepository.findByLoginId(id);
     }

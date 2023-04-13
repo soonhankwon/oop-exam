@@ -18,6 +18,8 @@ public class Member {
 
     private String pw;
 
+    private String token;
+
     private int verificationEmailStatus;
 
     public boolean isEmailVerified() {
@@ -27,5 +29,13 @@ public class Member {
     public boolean isPasswordValid(String pw) {
         PasswordDecoder passwordDecoder = new PasswordDecoder();
         return passwordDecoder.decode(this.pw).equals(pw);
+    }
+
+    public void verifyEmail() {
+        if (isEmailVerified()) {
+            throw new IllegalArgumentException();
+        } else {
+            this.verificationEmailStatus = 2;
+        }
     }
 }
