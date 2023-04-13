@@ -5,7 +5,7 @@ public class Movie {
     public static final int NEW_RELEASE = 2;
     private int priceCode;
 
-    public int getDaysRentedByPriceCode(int daysRented) {
+    public int getFrequentRenterPoints(int daysRented) {
         if(priceCode == NEW_RELEASE && daysRented > 1)
             return 2;
         else

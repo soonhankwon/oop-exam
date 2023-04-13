@@ -5,6 +5,6 @@ public class Rental {
     private int daysRented;
 
     public int getFrequentRenterPoints() {
-        return movie.getDaysRentedByPriceCode(this.daysRented);
+        return movie.getFrequentRenterPoints(this.daysRented);
     }
 }
